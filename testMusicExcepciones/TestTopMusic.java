@@ -1,13 +1,18 @@
 package testMusicExcepciones;
 import utiles.*;
+/**
+* @author Antonio J.
+* @version 1.0
+* Ejercicio Top Music para asignatura Programacion (1Âº DAW)
+*/
 
 public class TestTopMusic {
 
 	public static void main(String[] args) {
 		
 		String tituloMenu = "TopMusic";
-		String[] opcionesMenu = {"Añadir canción en una posición específica",
-								"Sacar canción del TopMusic", "Subir puesto",
+		String[] opcionesMenu = {"AÃ±adir canciÃ³n en una posiciÃ³n especÃ­fica",
+								"Sacar canciÃ³n del TopMusic", "Subir puesto",
 								"Bajar puesto", "Mostrar TopMusic",
 								"Mostrar el TOP del topMusic"};
 		
@@ -57,16 +62,16 @@ public class TestTopMusic {
 
 	
 	/**
-	 * Añade una canción a la lista en la posición indicada
-	 * @param lista La lista en la que se añade la canción
+	 * AÃ±ade una canciÃ³n a la lista en la posiciÃ³n indicada
+	 * @param lista La lista en la que se aÃ±ade la canciÃ³n
 	 */
 	private static void annadir(Lista lista){
 		
 		try {
-			lista.annadir(Teclado.leerCadena("Título de la canción a añadir: "), 
-					Teclado.leerCadena("Artista/grupo de la canción a añadir: "), 
-					Teclado.leerEntero("Año de grabación de la canción a añadir: "), 
-					(Teclado.leerEntero("Posición en la que se introducirá la nueva canción: ")) + 1);
+			lista.annadir(Teclado.leerCadena("TÃ­tulo de la canciÃ³n a aÃ±adir: "), 
+					Teclado.leerCadena("Artista/grupo de la canciÃ³n a aÃ±adir: "), 
+					Teclado.leerEntero("AÃ±o de grabaciÃ³n de la canciÃ³n a aÃ±adir: "), 
+					(Teclado.leerEntero("PosiciÃ³n en la que se introducirÃ¡ la nueva canciÃ³n: ")) + 1);
 		} catch (CancionNoValidaException | AutorNoValidoException | FechaNoValidaException | PosicionNoValidaException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -74,12 +79,12 @@ public class TestTopMusic {
 	}
 	
 	/**
-	 * Elimina una canción de la posición indicada de la lista
-	 * @param lista La lista en la que se elimina la canción
+	 * Elimina una canciÃ³n de la posiciÃ³n indicada de la lista
+	 * @param lista La lista en la que se elimina la canciÃ³n
 	 */
 	private static void sacar(Lista lista){
 		try {
-			lista.sacar(Teclado.leerEntero("Posición de la canción que se va a eliminar: "));
+			lista.sacar(Teclado.leerEntero("PosiciÃ³n de la canciÃ³n que se va a eliminar: "));
 		} catch (PosicionNoValidaException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -87,12 +92,12 @@ public class TestTopMusic {
 		}
 	
 	/**
-	 * Sube un puesto una canción de la lista según su posición actual
+	 * Sube un puesto una canciÃ³n de la lista segÃºn su posiciÃ³n actual
 	 * @param lista La lista con la que se trabaja
 	 */
 	private static void subir(Lista lista){				
 		try {
-			lista.subir((Teclado.leerEntero("Posición de la canción que va a subir un puesto: ")) + 1);
+			lista.subir((Teclado.leerEntero("PosiciÃ³n de la canciÃ³n que va a subir un puesto: ")) + 1);
 		} catch (PosicionNoValidaException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -100,12 +105,12 @@ public class TestTopMusic {
 	}
 	
 	/**
-	 * Baja un puesto una canción de la lista según su posición actual
+	 * Baja un puesto una canciÃ³n de la lista segÃºn su posiciÃ³n actual
 	 * @param lista La lista con la que se trabaja
 	 */
 	private static void bajar(Lista lista){
 		try{
-			lista.bajar((Teclado.leerEntero("Posición de la canción que va a bajar un puesto: ")) + 1);
+			lista.bajar((Teclado.leerEntero("PosiciÃ³n de la canciÃ³n que va a bajar un puesto: ")) + 1);
 		} catch (PosicionNoValidaException e){
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -113,7 +118,7 @@ public class TestTopMusic {
 	}
 	
 	/**
-	 * Muestra la canción en primera posición
+	 * Muestra la canciÃ³n en primera posiciÃ³n
 	 * @param lista La lista con la que se trabaja
 	 */
 	private static void mostrarTop(Lista lista){		
@@ -124,6 +129,6 @@ public class TestTopMusic {
 	 * Muestra un mensaje de error
 	 */
 	private static void error(){
-		System.out.println("Error. Opción no válida.\n");
+		System.out.println("Error. OpciÃ³n no vÃ¡lida.\n");
 	}
 }
